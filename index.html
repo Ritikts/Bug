@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+    .content {
+      position: relative;
+    }
+    .outer-main {
+      animation: small-big ease-in-out 2s 0s both;
+    }
+
+    @keyframes small-big {
+      0%,
+      100% {
+        height: 0;
+      }
+
+      25%,
+      75%,
+      100% {
+        height: 25.75rem;
+      }
+    }
+    .center-bug {
+      position: absolute;
+      top: 65px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -1;
+    }
+
+    .center-bug svg {
+      animation: small-big-2 linear 0.35s 0s both;
+    }
+    
+    @keyframes small-big-2 {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+    svg .circle {
+      animation: colorChange ease-in-out alternate-reverse 2s infinite;
+    }
+
+    @keyframes colorChange {
+      0% {
+        fill: rgb(255, 110, 110);
+      }
+
+      50% {
+        fill: rgb(133, 133, 255);
+      }
+
+      100% {
+        fill: rgb(7, 224, 177);
+      }
+    }
+
+    .outer-one,
+    .head {
+      stroke-dasharray: 1800;
+      stroke-dashoffset: 0;
+      animation: dash 2.5s linear 1s forwards;
+      visibility: hidden;
+    }
+    .head {
+      stroke-dasharray: 1800;
+      stroke-dashoffset: 0;
+    }
+    .body {
+      animation-delay: 1.5s;
+    }
+    .body-middle-line {
+      animation-delay: 2s;
+    }
+    .leg {
+      animation-delay: 2.5s;
+    }
+    .middle-leg {
+      animation-delay: 3s;
+    }
+    .upper-leg {
+      animation-delay: 3.5s;
+    }
+    @keyframes dash {
+      0% {
+        visibility: visible;
+        stroke-dashoffset: 1800;
+      }
+
+      100% {
+        visibility: visible;
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .dashed {
+      stroke-dasharray: 3;
+      stroke-dashoffset: 3;
+      animation-name: move;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+      animation-delay: 3.8s;
+    }
+
+    @keyframes move {
+      0% {
+        stroke-dashoffset: -200;
+      }
+
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .outer-two {
+      stroke-dasharray: 1800;
+      stroke-dashoffset: 0;
+      animation: dash2 2.5s linear forwards;
+      visibility: hidden;
+      animation-delay: 1s;
+    }
+
+    @keyframes dash2 {
+      from {
+        visibility: visible;
+        stroke-dashoffset: -1800;
+      }
+
+      to {
+        visibility: visible;
+        stroke-dashoffset: 0;
+      }
+    }
+    .color-1 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-1 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-2 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-2 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-3 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-3 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-4 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-4 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-5 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-5 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-6 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-6 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-7 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-7 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-8 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-8 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    .color-9 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: color-9 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+    }
+    @keyframes color-1 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(0, 15px, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(0, 42px, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-2 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(-15px, 15px, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(-30px, 30px, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-3 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(-15px, 0, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(-42px, 0, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-4 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(-15px, -15px, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(-30px, -30px, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-5 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(0, -15px, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(0, -42px, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-6 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(15px, -15px, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(30px, -30px, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-7 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(15px, 15px, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(30px, 30px, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-8 {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate3d(15px, 0, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(42px, 0, 0);
+        opacity: 1;
+      }
+    }
+    @keyframes color-9 {
+      0% {
+        visibility: visible;
+      }
+      100% {
+        visibility: visible;
+      }
+    }
+  </style>
+  <body>
+    <div class="content">
+      <svg
+        width="88"
+        height="88"
+        viewBox="0 0 88 88"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        id="bug-2"
+      >
+        <circle cx="43.5394" cy="43.6855" r="3" fill="black" class="color-9" />
+        <circle cx="43.5394" cy="3.18848" r="3" fill="#000" class="color-1" />
+        <circle cx="84.0361" cy="43.6855" r="3" fill="#000" class="color-3" />
+        <circle cx="43.5394" cy="84.1822" r="3" fill="#000" class="color-5" />
+        <circle cx="3.04242" cy="43.6855" r="3" fill="#000" class="color-8" />
+        <circle cx="13.6619" cy="15.9603" r="3" fill="#000" class="color-7" />
+        <circle cx="72.0697" cy="15.9603" r="3" fill="#000" class="color-2" />
+        <circle cx="72.0697" cy="72.0754" r="3" fill="#000" class="color-4" />
+        <circle cx="13.6619" cy="72.0754" r="3" fill="#000" class="color-6" />
+      </svg>
+      <svg
+        width="437"
+        height="412"
+        viewBox="0 0 437 412"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="outer-main"
+        id="bug"
+        style="display: none"
+      >
+        <path
+          class="outer-one"
+          d="M158.5 48L217.5 8L282 48L355 61L379.5 127.5L427 186.5L399 252.5L402.5 328L336.5 363L289.5 405H217.5H154.5L104.5 363L34 328L39 252.5L8 186.5L61 127.5L85 58L158.5 48Z"
+          fill="none"
+          stroke="#000000"
+          stroke-linejoin="round"
+          stroke-miterlimit="10"
+        />
+        <path
+          class="dashed"
+          d="M158.5 48L217.5 8L282 48L355 61L379.5 127.5L427 186.5L399 252.5L402.5 328L336.5 363L289.5 405H217.5H154.5L104.5 363L34 328L39 252.5L8 186.5L61 127.5L85 58L158.5 48Z"
+          fill="none"
+          stroke="white"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-miterlimit="10"
+        />
+        <path
+          class="outer-two"
+          d="M117.5 96.5L155 48.5L221 53.5L282.5 48.5L321 96.5L378.5 129.5L376 192L397.5 250.5L359.5 296.5L333.5 362.5L273 370.5L218 402.5L161 367L103.5 360.5L80 296.5L39 250.5L62 189.5V128L117.5 96.5Z"
+          fill="none"
+          stroke="#000000"
+          stroke-linejoin="round"
+          stroke-miterlimit="10"
+        />
+        <path
+          class="dashed"
+          d="M117.5 96.5L155 48.5L221 53.5L282.5 48.5L321 96.5L378.5 129.5L376 192L397.5 250.5L359.5 296.5L333.5 362.5L273 370.5L218 402.5L161 367L103.5 360.5L80 296.5L39 250.5L62 189.5V128L117.5 96.5Z"
+          fill="none"
+          stroke="white"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-miterlimit="10"
+        />
+        <path
+          class="outer-one"
+          d="M102 148.5L116.5 96.5H185L217.5 57.5L253.5 99.5L319 96.5L339 153L374 192L331 246.5L359 295.5C301.4 300.7 282.167 344 278 366L257 352.5C257 352.5 208 324 166 366C147.6 317.6 102.333 298.833 82 295.5L105 243.5L62.5 192.5L102 148.5Z"
+          fill="none"
+          stroke="#000000"
+          stroke-linejoin="round"
+          stroke-miterlimit="10"
+        />
+        <path
+          class="dashed"
+          d="M102 148.5L116.5 96.5H185L217.5 57.5L253.5 99.5L319 96.5L339 153L374 192L331 246.5L359 295.5C301.4 300.7 282.167 344 278 366L257 352.5C257 352.5 208 324 166 366C147.6 317.6 102.333 298.833 82 295.5L105 243.5L62.5 192.5L102 148.5Z"
+          fill="none"
+          stroke="white"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-miterlimit="10"
+        />
+
+        <circle class="circle" cx="166" cy="366" r="5" />
+        <circle class="circle" cx="102" cy="362" r="5" />
+        <circle class="circle" cx="81" cy="296" r="5" />
+        <circle class="circle" cx="39" cy="250" r="5" />
+        <circle class="circle" cx="63" cy="192" r="5" />
+        <circle class="circle" cx="63" cy="128" r="5" />
+        <circle class="circle" cx="117" cy="97" r="5" />
+        <circle class="circle" cx="183" cy="97" r="5" />
+        <circle class="circle" cx="218" cy="54" r="5" />
+        <circle class="circle" cx="155" cy="48" r="5" />
+        <circle class="circle" cx="283" cy="48" r="5" />
+        <circle class="circle" cx="255" cy="97" r="5" />
+        <circle class="circle" cx="319" cy="95" r="5" />
+        <circle class="circle" cx="338" cy="152" r="5" />
+        <circle class="circle" cx="217.5" cy="7.5" r="7.5" />
+        <circle class="circle" cx="83.5" cy="56.5" r="7.5" />
+        <circle class="circle" cx="7.5" cy="184.5" r="7.5" />
+        <circle class="circle" cx="31.5" cy="326.5" r="7.5" />
+        <circle class="circle" cx="153.5" cy="404.5" r="7.5" />
+        <circle class="circle" cx="283.5" cy="404.5" r="7.5" />
+        <circle class="circle" cx="405.5" cy="326.5" r="7.5" />
+        <circle class="circle" cx="429.5" cy="184.5" r="7.5" />
+        <circle class="circle" cx="379" cy="128" r="5" />
+        <circle class="circle" cx="374" cy="192" r="5" />
+        <circle class="circle" cx="330" cy="245" r="5" />
+        <circle class="circle" cx="108" cy="245" r="5" />
+        <circle class="circle" cx="398" cy="250" r="5" />
+        <circle class="circle" cx="359" cy="296" r="5" />
+        <circle class="circle" cx="335" cy="362" r="5" />
+        <circle class="circle" cx="279" cy="371" r="5" />
+        <circle class="circle" cx="356.5" cy="60.5" r="7.5" />
+        <div class="center-bug" id="center-bug" style="display: none">
+          <svg
+            width="217"
+            height="261"
+            viewBox="0 0 217 261"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M57.2892 260.367L110.029 170.367L167.289 258.117"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="upper-leg head"
+            />
+            <path
+              d="M57.2892 260.367L110.029 170.367L167.289 258.117"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M109.398 151.953L109.473 94.0883"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="body-middle-line head"
+            />
+            <path
+              d="M109.398 151.953L109.473 94.0883"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M120.08 42.4351C91.7898 34.833 73.9574 58.0281 73.9086 71.4638C73.8466 88.5519 139.865 86.2763 143.385 71.5766C147.195 57.9593 129.812 45.0502 120.08 42.4351Z"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="head"
+            />
+            <path
+              class="dashed"
+              d="M120.08 42.4351C91.7898 34.833 73.9574 58.0281 73.9086 71.4638C73.8466 88.5519 139.865 86.2763 143.385 71.5766C147.195 57.9593 129.812 45.0502 120.08 42.4351Z"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+            />
+
+            <path
+              d="M189.72 131.922L181.077 105.157C180.168 102.344 177.346 100.611 174.426 101.075L162.805 102.919"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="leg head"
+            />
+            <path
+              d="M189.72 131.922L181.077 105.157C180.168 102.344 177.346 100.611 174.426 101.075L162.805 102.919"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M157.005 90.5511L181.825 88.5413"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="middle-leg head"
+            />
+            <path
+              d="M157.005 90.5511L181.825 88.5413"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M191.651 73.5606L178.938 65.0109C176.711 63.5129 173.76 63.6765 171.712 65.4116L153.426 80.9026"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="upper-leg head"
+            />
+            <path
+              d="M191.651 73.5606L178.938 65.0109C176.711 63.5129 173.76 63.6765 171.712 65.4116L153.426 80.9026"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M30.2107 132.287L38.2191 105.324C39.0608 102.491 41.8413 100.692 44.7711 101.086L56.4323 102.656"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="leg head"
+            />
+            <path
+              d="M30.2107 132.287L38.2191 105.324C39.0608 102.491 41.8413 100.692 44.7711 101.086L56.4323 102.656"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M61.9389 90.1541L37.0782 88.7315"
+              stroke="#101010"
+              stroke-width="1.5"
+              stroke-dasharray="3 3"
+              class="middle-leg head"
+            />
+            <path
+              d="M61.9389 90.1541L37.0782 88.7315"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M26.9009 73.9872L39.4078 65.1394C41.5992 63.5892 44.5535 63.683 46.642 65.3692L65.2891 80.4237"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="upper-leg head"
+            />
+            <path
+              d="M26.9009 73.9872L39.4078 65.1394C41.5992 63.5892 44.5535 63.683 46.642 65.3692L65.2891 80.4237"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <path
+              d="M72.8978 84.0824C101.825 96.2868 133.685 88.9821 145.999 83.8041C166.624 121.437 159.727 144.627 153.701 151.518C135.485 174.465 86.6062 168.336 77.2027 161.077C47.2036 142.397 61.8331 101.964 72.8978 84.0824Z"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="body head"
+            />
+            <path
+              class="dashed"
+              d="M72.8978 84.0824C101.825 96.2868 133.685 88.9821 145.999 83.8041C166.624 121.437 159.727 144.627 153.701 151.518C135.485 174.465 86.6062 168.336 77.2027 161.077C47.2036 142.397 61.8331 101.964 72.8978 84.0824Z"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+            />
+            <circle
+              cx="87.7891"
+              cy="112.867"
+              r="10.75"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="upper-leg head"
+            />
+            <circle
+              cx="87.7891"
+              cy="112.867"
+              r="10.75"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <circle
+              cx="127.789"
+              cy="112.867"
+              r="10.75"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="upper-leg head"
+            />
+            <circle
+              cx="127.789"
+              cy="112.867"
+              r="10.75"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <circle
+              cx="123.789"
+              cy="139.867"
+              r="7.75"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="upper-leg head"
+            />
+            <circle
+              cx="123.789"
+              cy="139.867"
+              r="7.75"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+            <circle
+              cx="91.7891"
+              cy="139.867"
+              r="7.75"
+              fill="none"
+              stroke="#000000"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="upper-leg head"
+            />
+            <circle
+              cx="91.7891"
+              cy="139.867"
+              r="7.75"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"
+              stroke-miterlimit="10"
+              class="dashed"
+            />
+
+            <circle
+              class="circle"
+              cx="87.7891"
+              cy="112.867"
+              r="7.5"
+              fill="#5B98FF"
+            />
+            <circle
+              class="circle"
+              cx="91.6891"
+              cy="139.667"
+              r="5"
+              fill="#5B98FF"
+            />
+            <circle
+              class="circle"
+              cx="123.889"
+              cy="139.667"
+              r="5"
+              fill="#5B98FF"
+            />
+            <circle
+              class="circle"
+              cx="127.789"
+              cy="112.867"
+              r="7.5"
+              fill="#5B98FF"
+            />
+            <circle
+              class="circle"
+              cx="110.789"
+              cy="169.867"
+              r="7.5"
+              fill="#1268FA"
+            />
+            <circle cx="26.7891" cy="74.8672" r="3.5" fill="#101010" />
+            <circle cx="29.7891" cy="131.867" r="3.5" fill="#101010" />
+            <circle cx="34.7891" cy="88.8672" r="2.5" fill="#101010" />
+            <circle cx="192.789" cy="74.8672" r="3.5" fill="#101010" />
+            <circle cx="189.789" cy="131.867" r="3.5" fill="#101010" />
+            <circle cx="178.789" cy="88.8672" r="2.5" fill="#101010" />
+          </svg>
+        </div>
+      </svg>
+    </div>
+  </body>
+  <script>
+    setTimeout(function () {
+      document.getElementById("bug").style.cssText = `display: flex;`;
+    }, 1700);
+    setTimeout(function () {
+      document.getElementById("center-bug").style.cssText = `display: flex;`;
+    }, 1740);
+    setTimeout(function () {
+      document.getElementById("bug-2").style.cssText = `display: none;`;
+    }, 1700);
+  </script>
+</html>
